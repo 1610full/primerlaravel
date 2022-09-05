@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/landingpage', function () {
     return view('index');
 });
+
+Route::get('/contacto', function () {
+    return view('contacto');
+});
