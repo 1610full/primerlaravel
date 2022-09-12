@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SitioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/landingpage', function () {
-    return view('index');
-});
+Route::get('/landingpage', [SitioController::class, 'landingpage']);
 
-Route::get('/contacto', function () {
-    return view('contacto');
-});
+Route::get('/contacto/{codigo?}', [SitioController::class, 'contactoCodigo']);
