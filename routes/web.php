@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SitioController;
 
@@ -21,3 +22,7 @@ Route::get('/', function () {
 Route::get('/landingpage', [SitioController::class, 'landingpage']);
 
 Route::get('/contacto/{codigo?}', [SitioController::class, 'contactoCodigo']);
+
+Route::resources([
+    'libros' => ProductoController::class,
+]);
